@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 
 import { auth } from "./firebase";
+import Profile from "./components/Profile/Profile";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Home name={userName} />} />
         </Routes>
       </Router>
