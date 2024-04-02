@@ -1,0 +1,22 @@
+.ingredientInputWrapper {
+  display: flex; /* Enable flexbox */
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 80px;
+}
+
+.imagePreview {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
+.imagePreview img {
+  max-width: 100%; /* Ensure image scales within the container */
+  max-height: 200px; /* Set a maximum height (optional) */
+}
+
+.buttonContainer {
+  margin-top: 10px; /* Adjust margin as needed */
+}
