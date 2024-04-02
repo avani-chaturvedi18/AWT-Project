@@ -5,6 +5,9 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import InputControl from "../InputControl/InputControl";
 import { auth } from "../../firebase";
 
+import { TextField, Button, Typography } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 import styles from "./Login.module.css";
 
 function Login() {
@@ -27,7 +30,7 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-        
+
         navigate("/");
       })
       .catch((err) => {
@@ -40,19 +43,38 @@ function Login() {
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>Login</h1>
 
-        <InputControl
+        {/* <InputControl
           label="Email"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
           placeholder="Enter email address"
+        /> */}
+        <TextField
+          label="Email"
+          placeholder="Enter email address"
+          value={values.email}
+          onChange={(event) =>
+            setValues({ ...values, email: event.target.value })
+          }
         />
-        <InputControl
+
+        {/* <InputControl
           label="Password"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, pass: event.target.value }))
           }
           placeholder="Enter Password"
+        /> */}
+
+        <TextField
+          label="Password"
+          placeholder="Enter password"
+          value={values.pass}
+          onChange={(event) =>
+            setValues({ ...values, pass: event.target.value })
+          }
+          type="password"
         />
 
         <div className={styles.footer}>
